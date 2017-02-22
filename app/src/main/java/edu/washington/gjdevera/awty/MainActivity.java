@@ -28,15 +28,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final TextInputEditText message = (TextInputEditText) findViewById(R.id.message);
-        final TextInputEditText phone = (TextInputEditText) findViewById(R.id.phone);
-        final TextInputEditText interval = (TextInputEditText) findViewById(R.id.interval);
-
         final Button btn =  (Button) findViewById(R.id.start);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!started) {
+                    TextInputEditText message = (TextInputEditText) findViewById(R.id.message);
+                    TextInputEditText phone = (TextInputEditText) findViewById(R.id.phone);
+                    TextInputEditText interval = (TextInputEditText) findViewById(R.id.interval);
                     if (TextUtils.isEmpty(message.getText().toString())) {
                         Toast.makeText(getApplication(),
                                 "Please enter a message", Toast.LENGTH_SHORT).show();
