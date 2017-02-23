@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 1001, intent, 0);
                     int intervalTimer = Integer.parseInt(intervalString) * 1000 * 60;
                     AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                    manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), intervalTimer, pendingIntent);
+                    manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), intervalTimer, pendingIntent);
                 } else {
                     btn.setText(getResources().getString(R.string.start));
                     started = false;
