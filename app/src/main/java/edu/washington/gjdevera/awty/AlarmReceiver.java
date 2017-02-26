@@ -21,15 +21,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                 Toast.LENGTH_LONG).show();
 
         Log.i("Send SMS", "");
-        Intent smsIntent = new Intent(Intent.ACTION_VIEW);
-
-        smsIntent.setData(Uri.parse("smsto:"));
-        smsIntent.setType("vnd.android-dir/mms-sms");
-        smsIntent.putExtra("address", phone);
-        smsIntent.putExtra("sms_body", message);
-
         try {
-            context.startActivity(smsIntent);
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts(message, phone, null)));
             Log.i("Finished sending SMS...", "");
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(context,
