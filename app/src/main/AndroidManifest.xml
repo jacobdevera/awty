@@ -21,5 +21,6 @@
             android:enabled="true"
             android:exported="true"></receiver>
     </application>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>
